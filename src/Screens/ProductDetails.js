@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box'
 import SlickSlider from '../components/SlickSlider'
 import RelatedItemsSlider from '../components/RelatedItemsSlider'
 import { detailsProduct } from '../actions/productActions'
-
+import { addToCart } from '../actions/cartActions'
 function ProductDetails(props) {
   const settings = {
     dots: true,
@@ -28,7 +28,9 @@ function ProductDetails(props) {
   useEffect(() => {
     dispatch(detailsProduct(productId))
   }, [])
-
+  const addToCartHandler = (productId, qty) => {
+    dispatch(addToCart(productId, qty))
+  }
   return (
     <div className="product-detail-wrapper">
       {loading ? (
@@ -102,7 +104,12 @@ function ProductDetails(props) {
                     </div>
                   </div>
                   <div className="pc-button-container">
-                    <div className="pc-button-add">
+                    <div
+                      className="pc-button-add"
+                      onClick={() => {
+                        return addToCartHandler(product.id, quantity)
+                      }}
+                    >
                       <span>Add to Bag</span>
                     </div>
                     <a className="pc-button-buy" href="/classicshop/bag">

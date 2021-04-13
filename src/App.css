@@ -459,3 +459,18 @@ aside ul li:hover {
   width: 90% !important;
   border-radius: 10px;
 }
+.the-bag {
+  display: flex;
+  position: relative;
+}
+.bag-badge {
+  background-color: #dd655e;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 0;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  margin-right: 1rem;
+  color: #fff;
+}

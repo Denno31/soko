@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 
 function Nav(props) {
   const history = useHistory()
   const [location, setLocation] = useState('')
+  const { cartItems } = useSelector((state) => state.cart)
 
-  useEffect(() => {
-    setLocation(history.location.pathname)
-    console.log('path set', history.location.pathname)
-  })
   return (
     <div className="nav">
       <div className="container">
@@ -33,7 +31,15 @@ function Nav(props) {
             <ul className="nav-menu">
               <li>
                 <Link to="">
-                  <img src="/images/bag.png" alt="" /> <span>Bag</span>
+                  <div className="the-bag">
+                    <img
+                      src="/images/bag.png"
+                      alt=""
+                      style={{ marginRight: '0', paddingRight: '0' }}
+                    />
+                    <div className="bag-badge">{cartItems.length}</div>
+                  </div>{' '}
+                  <span>Bag</span>
                 </Link>
               </li>
               <li>
