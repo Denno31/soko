@@ -33,8 +33,8 @@ function Bag() {
                     <div className="discount-badge"></div>
                   </div>
                   <div className="product-details p-1">
-                    <h3>name</h3>
-                    <p>price</p>
+                    <h3>{item.name}</h3>
+                    <p>{item.price}</p>
                   </div>
                 </div>
                 <div className="add-cart-btn">

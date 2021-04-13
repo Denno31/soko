@@ -399,6 +399,10 @@ aside ul li:hover {
   border-right: 0px;
   border-radius: 2.5px 0 0 2.5px;
 }
+.minus-button img,
+.add-button img {
+  width: 100%;
+}
 .add-button,
 .minus-button {
   width: 20px;
