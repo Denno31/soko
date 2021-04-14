@@ -53,6 +53,18 @@ ul {
 .m-y {
   margin-top: 1rem;
 }
+.home-div {
+  background-color: #f8de4b;
+  width: 10rem;
+  margin: auto;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #2e6ac8;
+  font-weight: bold;
+}
+.home-div:hover {
+  cursor: pointer;
+}
 .btn-primary {
   background-color: #fff;
   border-radius: 4px;

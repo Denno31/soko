@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 function BagScreen() {
@@ -9,6 +10,16 @@ function BagScreen() {
   cart.total = cart.delivery + cart.itemsPrice
   return (
     <div style={{ borderTop: '2px solid #eeeeee' }}>
+      {cartItems.length <= 0 && (
+        <div className="empty-cart">
+          <img src="/images/cartempty.jpg" />
+          <h2>It's empty here</h2>
+          <p>Start shopping to add items to your bag</p>
+          <Link to="/">
+            <div className="home-div">Back to homepage</div>
+          </Link>
+        </div>
+      )}
       <div style={{ width: '40%', margin: '25px auto' }}>
         {cartItems.map((item, index) => (
           <div
@@ -44,18 +55,20 @@ function BagScreen() {
             </div>
           </div>
         ))}
-        <div className="row">
-          <ul>
-            <li>Item total</li>
-            <li>Delivery</li>
-            <li>Total</li>
-          </ul>
-          <ul>
-            <li>UGX {cart.itemsPrice}</li>
-            <li>UGX {cart.delivery}</li>
-            <li>UGX {cart.total}</li>
-          </ul>
-        </div>
+        {cartItems.length > 0 && (
+          <div className="row">
+            <ul>
+              <li>Item total</li>
+              <li>Delivery</li>
+              <li>Total</li>
+            </ul>
+            <ul>
+              <li>UGX {cart.itemsPrice}</li>
+              <li>UGX {cart.delivery}</li>
+              <li>UGX {cart.total}</li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   )

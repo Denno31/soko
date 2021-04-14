@@ -60,18 +60,20 @@ function Bag() {
           </div>
         </div>
       ))}
-      <div className="row">
-        <ul>
-          <li>Item total</li>
-          <li>Delivery</li>
-          <li>Total</li>
-        </ul>
-        <ul>
-          <li>UGX {cart.itemsPrice}</li>
-          <li>UGX {cart.delivery}</li>
-          <li>UGX {cart.total}</li>
-        </ul>
-      </div>
+      {cartItems.length > 0 && (
+        <div className="row">
+          <ul>
+            <li>Item total</li>
+            <li>Delivery</li>
+            <li>Total</li>
+          </ul>
+          <ul>
+            <li>UGX {cart.itemsPrice}</li>
+            <li>UGX {cart.delivery}</li>
+            <li>UGX {cart.total}</li>
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

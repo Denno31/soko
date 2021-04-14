@@ -498,3 +498,10 @@ aside ul li:hover {
   display: flex;
   font-size: 0.8rem;
 }
+.empty-cart img {
+  width: 10rem;
+}
+.empty-cart {
+  text-align: center;
+  margin: 8rem;
+}

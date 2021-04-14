@@ -32,12 +32,19 @@ function Nav(props) {
               <li>
                 <Link to="/bag">
                   <div className="the-bag">
-                    <img
-                      src="/images/bag.png"
-                      alt=""
-                      style={{ marginRight: '0', paddingRight: '0' }}
-                    />
-                    <div className="bag-badge">{cartItems.length}</div>
+                    {cartItems.length > 0 ? (
+                      <>
+                        {' '}
+                        <img
+                          src="/images/bag.png"
+                          alt=""
+                          style={{ marginRight: '0', paddingRight: '0' }}
+                        />{' '}
+                        <div className="bag-badge">{cartItems.length}</div>
+                      </>
+                    ) : (
+                      <img src="/images/bag.png" alt="" />
+                    )}
                   </div>{' '}
                   <span>Bag</span>
                 </Link>
