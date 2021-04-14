@@ -17,7 +17,7 @@ function Category() {
     <div className="category py-1">
       <ul>
         {categories.map((category) => (
-          <li>
+          <li key={category.id}>
             {category.category} ({category.items})
           </li>
         ))}

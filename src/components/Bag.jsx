@@ -28,6 +28,7 @@ function Bag() {
       )}
       {cartItems.map((item) => (
         <div
+          key={item.id}
           className="bag-items"
           style={{
             marginBottom: '1rem',

@@ -4,12 +4,13 @@ import ProductList from '../components/ProductList'
 import Bag from '../components/Bag'
 
 function HomeScreen(props) {
-  console.log(props)
   return (
-    <div class="home-container container" style={{ boxSizing: 'border-box' }}>
-      <Category />
-      <ProductList />
-      <Bag />
+    <div style={{ borderTop: '2px solid #eeeeee' }}>
+      <div class="home-container container" style={{ boxSizing: 'border-box' }}>
+        <Category />
+        <ProductList />
+        <Bag />
+      </div>
     </div>
   )
 }

@@ -139,7 +139,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   box-sizing: border-box;
-  border-top: 2px solid #eeeeee;
+  /* border-top: 2px solid #eeeeee; */
 }
 
 .category ul li {
@@ -359,7 +359,7 @@ aside ul li {
   font-size: 1rem;
   line-height: 1.5rem;
   border-bottom: 1px solid #f0f0f0;
-  color: #827e7e;
+  color: #292424;
 }
 aside ul li:hover {
   cursor: pointer;

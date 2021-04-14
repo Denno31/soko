@@ -30,8 +30,8 @@ function ProductList() {
         </div>
       </div>
       {products.map((product) => (
-        <Link to={`product/${product.id}`}>
-          <div key={product.id} className="products m-1" key={product.id}>
+        <Link to={`product/${product.id}`} key={product.id}>
+          <div className="products m-1">
             <div className="right p-1">
               <div className="product-image">
                 <img src="/images/shoe.jpg" alt="" />

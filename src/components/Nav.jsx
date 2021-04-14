@@ -5,9 +5,9 @@ import SearchIcon from '@material-ui/icons/Search'
 
 function Nav(props) {
   const history = useHistory()
-
+  console.log('nav', props)
   const { cartItems } = useSelector((state) => state.cart)
-
+  useEffect(() => {}, [history])
   return (
     <div className="nav">
       <div className="container">
@@ -30,7 +30,7 @@ function Nav(props) {
           <div className="list">
             <ul className="nav-menu">
               <li>
-                <Link to="">
+                <Link to="/bag">
                   <div className="the-bag">
                     <img
                       src="/images/bag.png"
