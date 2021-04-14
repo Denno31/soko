@@ -10,9 +10,9 @@ function BagScreen() {
   return (
     <div style={{ borderTop: '2px solid #eeeeee' }}>
       <div style={{ width: '40%', margin: '25px auto' }}>
-        {cartItems.map((item) => (
+        {cartItems.map((item, index) => (
           <div
-            key={item.id}
+            key={index}
             className="bag-items"
             style={{
               marginBottom: '1rem',

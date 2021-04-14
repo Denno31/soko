@@ -6,7 +6,10 @@ import Bag from '../components/Bag'
 function HomeScreen(props) {
   return (
     <div style={{ borderTop: '2px solid #eeeeee' }}>
-      <div class="home-container container" style={{ boxSizing: 'border-box' }}>
+      <div
+        className="home-container container"
+        style={{ boxSizing: 'border-box' }}
+      >
         <Category />
         <ProductList />
         <Bag />

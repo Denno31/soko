@@ -27,7 +27,7 @@ function ProductDetails(props) {
   }
   useEffect(() => {
     dispatch(detailsProduct(productId))
-  }, [])
+  }, [dispatch, productId])
   const addToCartHandler = (productId, qty) => {
     dispatch(addToCart(productId, qty))
   }

@@ -8,7 +8,7 @@ function Category() {
   )
   useEffect(() => {
     dispatch(categoryList())
-  }, [])
+  }, [dispatch])
   return loading ? (
     <div>Loading...</div>
   ) : error ? (

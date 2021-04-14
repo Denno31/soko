@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-import { Link } from 'react-router-dom'
 import SideBar from './SideBar'
 import MenuIcon from '@material-ui/icons/Menu'
 function NavBar() {

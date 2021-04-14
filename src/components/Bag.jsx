@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 function Bag() {
   const { cartItems } = useSelector((state) => state.cart)
@@ -26,9 +26,9 @@ function Bag() {
           </div>
         </div>
       )}
-      {cartItems.map((item) => (
+      {cartItems.map((item, index) => (
         <div
-          key={item.id}
+          key={index}
           className="bag-items"
           style={{
             marginBottom: '1rem',

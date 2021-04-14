@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'

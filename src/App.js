@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
-import logo from './logo.svg'
+
 import './App.css'
 import NavBar from './components/NavBar'
 import Nav from './components/Nav'
