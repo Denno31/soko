@@ -22,9 +22,11 @@ export const productListReducer = (
     case PRODUCT_LIST_SUCCESS:
       return { loading: false, products: action.payload }
     case PRODUCT_LIST_SEARCH_SUCCESS:
-      let productPattern = new RegExp('^' + action.payload.searchName)
+      let productPattern = new RegExp(
+        '^' + action.payload.searchName.toLowerCase(),
+      )
       let found = action.payload.data.filter((product) =>
-        product.productName.match(productPattern),
+        product.productName.toLowerCase().match(productPattern),
       )
       if (found) {
         return { loading: false, products: found }
