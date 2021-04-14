@@ -62,7 +62,8 @@ ul {
   color: #2e6ac8;
   font-weight: bold;
 }
-.home-div:hover {
+.home-div:hover,
+.category h3 {
   cursor: pointer;
 }
 .btn-primary {

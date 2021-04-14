@@ -1,11 +1,22 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { addToCart } from '../actions/cartActions'
+
 function Bag() {
+  const dispatch = useDispatch()
   const { cartItems } = useSelector((state) => state.cart)
+
   const cart = useSelector((state) => state.cart)
   cart.itemsPrice = cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   cart.delivery = 100
   cart.total = cart.delivery + cart.itemsPrice
+
+  const adjustAddQty = (productId, qty) => {
+    qty += 1
+    console.log(productId, qty)
+    dispatch(addToCart(productId, qty))
+  }
+
   return (
     <div className="cart m-x" style={{ boxSizing: 'border-box' }}>
       <div className="bag-header">
@@ -50,11 +61,26 @@ function Bag() {
           <div>
             <div className="button-container">
               <div className="minus-button">
-                <img src="/images/minus.png" alt="" />
+                <img
+                  src="/images/minus.png"
+                  alt=""
+                  onClick={() => {
+                    if (item.qty <= 1) return
+
+                    item.qty -= 1
+                    return dispatch(addToCart(item.product, item.qty))
+                  }}
+                />
               </div>
               <div className="button-text">{item.qty}</div>
               <div className="add-button">
-                <img src="/images/plus.png" alt="" />
+                <img
+                  src="/images/plus.png"
+                  alt=""
+                  onClick={() => {
+                    return adjustAddQty(item.product, item.qty)
+                  }}
+                />
               </div>
             </div>
           </div>

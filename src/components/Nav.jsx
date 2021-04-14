@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
+import { searchProduct } from '../actions/productActions'
 
 function Nav(props) {
   const history = useHistory()
-  console.log('nav', props)
+  const dispatch = useDispatch()
   const { cartItems } = useSelector((state) => state.cart)
+  const [searchTerm, setSearchTerm] = useState('')
   useEffect(() => {}, [history])
   return (
     <div className="nav">
@@ -67,8 +69,13 @@ function Nav(props) {
               name=""
               id=""
               placeholder="Search for products..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button className="search-icon">
+            <button
+              className="search-icon"
+              onClick={() => dispatch(searchProduct(searchTerm))}
+            >
               <SearchIcon className="search-icon-btn" />
             </button>
           </div>

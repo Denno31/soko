@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { listProducts } from '../actions/productActions'
 
-function ProductList() {
+function ProductList(props) {
   const dispatch = useDispatch()
   const { products, loading, error } = useSelector((state) => state.products)
   const calculatedPrice = (discount, price) => {
@@ -24,7 +24,8 @@ function ProductList() {
         <div className="py-1 p-1 product-header">
           {products && (
             <h2>
-              All Categories<span className="badge">{products.length}</span>
+              {props.cat}
+              <span className="badge">{products.length}</span>
             </h2>
           )}
         </div>
