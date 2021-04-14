@@ -35,7 +35,7 @@ function ProductList(props) {
           <div className="products m-1">
             <div className="right p-1">
               <div className="product-image">
-                <img src="/images/shoe.jpg" alt="" />
+                <img src={product.image[0]} alt="" />
                 {product.discount && (
                   <div className="discount-badge">{`-${product.discount}%`}</div>
                 )}

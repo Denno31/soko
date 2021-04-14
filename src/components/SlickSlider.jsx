@@ -10,7 +10,7 @@ function SlickSlider(props) {
     <Slider {...settings}>
       {images.map((image, index) => (
         <div key={index} className="product-img">
-          <img src="/images/stool.jpg" alt="" />
+          <img src={image} alt="" />
         </div>
       ))}
     </Slider>
