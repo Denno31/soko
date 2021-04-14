@@ -12,7 +12,7 @@ function BagScreen() {
     <div style={{ borderTop: '2px solid #eeeeee' }}>
       {cartItems.length <= 0 && (
         <div className="empty-cart">
-          <img src="/images/cartempty.jpg" />
+          <img src="/images/cartempty.jpg" alt="" />
           <h2>It's empty here</h2>
           <p>Start shopping to add items to your bag</p>
           <Link to="/">
