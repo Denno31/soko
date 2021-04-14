@@ -15,7 +15,7 @@ function Category(props) {
     dispatch(categoryList())
   }, [dispatch])
   return loading ? (
-    <div>Loading...</div>
+    <div></div>
   ) : error ? (
     <div></div>
   ) : (

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { listProducts } from '../actions/productActions'
+import Loader from './Loader'
 
 function ProductList(props) {
   const dispatch = useDispatch()
@@ -15,7 +16,9 @@ function ProductList(props) {
     dispatch(listProducts())
   }, [dispatch])
   return loading ? (
-    <div className="py-1 p-1">Loading</div>
+    <div className="py-1 p-1">
+      <Loader />
+    </div>
   ) : error ? (
     <div className="py-1 p-1">{error}</div>
   ) : (

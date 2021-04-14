@@ -8,6 +8,7 @@ import SlickSlider from '../components/SlickSlider'
 import RelatedItemsSlider from '../components/RelatedItemsSlider'
 import { detailsProduct } from '../actions/productActions'
 import { addToCart } from '../actions/cartActions'
+import Loader from '../components/Loader'
 function ProductDetails(props) {
   const settings = {
     dots: true,
@@ -34,9 +35,28 @@ function ProductDetails(props) {
   return (
     <div className="product-detail-wrapper">
       {loading ? (
-        <div>Loading...</div>
+        <div
+          className="m-1"
+          style={{
+            textAlign: 'center',
+            width: '40%',
+            margin: 'auto',
+            marginTop: '80px',
+          }}
+        >
+          <Loader />
+        </div>
       ) : error ? (
-        <div>{error}</div>
+        <div
+          style={{
+            textAlign: 'center',
+            width: '40%',
+            margin: 'auto',
+            marginTop: '80px',
+          }}
+        >
+          {error}
+        </div>
       ) : (
         <>
           <div className="product-cat  m-1">

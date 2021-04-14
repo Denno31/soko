@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { addToCart } from '../actions/cartActions'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 
 function BagScreen() {
   const dispatch = useDispatch()
@@ -73,23 +73,40 @@ function BagScreen() {
                     }}
                   />
                 </div>
+                <button
+                  style={{
+                    marginLeft: '10px',
+                    backgroundColor: '#fff',
+                    border: '1px solid #2766CC',
+                    borderRadius: '10px',
+                    color: '#2766CC',
+                  }}
+                  onClick={() => {
+                    dispatch(removeFromCart(item.product))
+                  }}
+                >
+                  remove
+                </button>
               </div>
             </div>
           </div>
         ))}
         {cartItems.length > 0 && (
-          <div className="row">
-            <ul>
-              <li>Item total</li>
-              <li>Delivery</li>
-              <li>Total</li>
-            </ul>
-            <ul>
-              <li>UGX {cart.itemsPrice}</li>
-              <li>UGX {cart.delivery}</li>
-              <li>UGX {cart.total}</li>
-            </ul>
-          </div>
+          <>
+            <div className="row">
+              <ul>
+                <li>Item total</li>
+                <li>Delivery</li>
+                <li>Total</li>
+              </ul>
+              <ul>
+                <li>UGX {cart.itemsPrice}</li>
+                <li>UGX {cart.delivery}</li>
+                <li>UGX {cart.total}</li>
+              </ul>
+            </div>
+            <div className="home-div">proceed to checkout</div>
+          </>
         )}
       </div>
     </div>

@@ -87,7 +87,7 @@ function Bag() {
         </div>
       ))}
       {cartItems.length > 0 && (
-        <div className="row">
+        <div className="row" style={{ marginBottom: '20px' }}>
           <ul>
             <li>Item total</li>
             <li>Delivery</li>
