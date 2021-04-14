@@ -1,6 +1,13 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { searchProductCategory, listProducts } from '../actions/productActions'
 
 function SideBar({ openSidebar, onHandleSideBar }) {
+  const { error, categories, loading } = useSelector(
+    (state) => state.categories,
+  )
+
+  const dispatch = useDispatch()
   return (
     <aside className={`sidebar ${openSidebar ? 'open' : ''}`}>
       <h2>Categories</h2>
@@ -8,12 +15,34 @@ function SideBar({ openSidebar, onHandleSideBar }) {
         X
       </button>
       <ul>
-        <li>Electronics</li>
-        <li>Face Masks</li>
-        <li>Grocery</li>
-        <li>Home</li>
-        <li>Kids</li>
+        {loading ? (
+          <div></div>
+        ) : error ? (
+          <div></div>
+        ) : (
+          categories.map((category) => (
+            <li
+              key={category.id}
+              onClick={() => {
+                //  ? props.onHandleSetCategory(category.category)
+                dispatch(searchProductCategory(category.category))
+                document.querySelector('.close-btn').click()
+              }}
+            >
+              {category.category} ({category.items})
+            </li>
+          ))
+        )}
       </ul>
+      <h3
+        onClick={() => {
+          // props.onHandleSetCategory('All Categories')
+          dispatch(listProducts())
+          document.querySelector('.close-btn').click()
+        }}
+      >
+        View all categories &#62;
+      </h3>
     </aside>
   )
 }
