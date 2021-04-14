@@ -226,6 +226,16 @@ h3 {
   justify-content: space-between;
   align-items: flex-end;
 }
+.sm {
+  display: flex;
+}
+.sm img {
+  width: 50%;
+}
+.sm .right {
+  display: flex;
+  font-size: 1rem;
+}
 .products:hover {
   cursor: pointer;
 }
@@ -477,4 +487,14 @@ aside ul li:hover {
   align-items: center;
   margin-right: 1rem;
   color: #fff;
+}
+.bag-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.bag-items .right {
+  display: flex;
+  font-size: 0.8rem;
 }

@@ -25,6 +25,9 @@ ul li {
 .text-light {
   color: var(--light-color);
 }
+.m-x {
+  margin-left: 1rem;
+}
 .py-2 {
   margin-top: 3rem;
 }
@@ -61,4 +64,8 @@ ul {
 }
 .btn-primary:hover {
   cursor: pointer;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
 }

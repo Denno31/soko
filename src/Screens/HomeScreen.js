@@ -6,7 +6,7 @@ import Bag from '../components/Bag'
 function HomeScreen(props) {
   console.log(props)
   return (
-    <div class="home-container container">
+    <div class="home-container container" style={{ boxSizing: 'border-box' }}>
       <Category />
       <ProductList />
       <Bag />

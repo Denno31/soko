@@ -5,7 +5,7 @@ import SearchIcon from '@material-ui/icons/Search'
 
 function Nav(props) {
   const history = useHistory()
-  const [location, setLocation] = useState('')
+
   const { cartItems } = useSelector((state) => state.cart)
 
   return (
@@ -51,22 +51,21 @@ function Nav(props) {
             </ul>
           </div>
         </div>
-        {location === '/' && (
-          <div className="search-container">
-            <div className="search">
-              {' '}
-              <input
-                type="text"
-                name=""
-                id=""
-                placeholder="Search for products..."
-              />
-              <button className="search-icon">
-                <SearchIcon className="search-icon-btn" />
-              </button>
-            </div>
+
+        <div className="search-container">
+          <div className="search">
+            {' '}
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Search for products..."
+            />
+            <button className="search-icon">
+              <SearchIcon className="search-icon-btn" />
+            </button>
           </div>
-        )}
+        </div>
       </div>
     </div>
   )
