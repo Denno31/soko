@@ -61,7 +61,7 @@ function Nav(props) {
           </div>
         </div>
 
-        <div className="search-container">
+        <div className="search-container" id="search-div">
           <div className="search">
             {' '}
             <input
