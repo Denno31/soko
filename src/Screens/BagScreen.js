@@ -27,7 +27,10 @@ function BagScreen() {
           </Link>
         </div>
       )}
-      <div style={{ width: '40%', margin: '25px auto' }}>
+      <div
+        className="bag-c-items"
+        style={{ width: '40%', margin: '25px auto' }}
+      >
         {cartItems.map((item, index) => (
           <div
             key={index}

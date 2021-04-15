@@ -46,6 +46,12 @@
   .pc-button-container {
     width: 100%;
   }
+  .bag-c-items {
+    width: 100% !important;
+  }
+  .bag-items {
+    width: 100% im !important;
+  }
 }
 @media (max-width: 768px) {
   .footer-details {
@@ -101,5 +107,12 @@
   }
   .pc-button-container {
     width: 100%;
+  }
+  .bag-c-items {
+    width: 90% !important;
+    padding: 2rem 2rem !important;
+  }
+  .bag-items {
+    width: 100% !important;
   }
 }
