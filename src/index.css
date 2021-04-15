@@ -53,6 +53,10 @@ ul {
 .m-y {
   margin-top: 1rem;
 }
+
+.search-container.display-none {
+  display: none;
+}
 .home-div {
   background-color: #f8de4b;
   width: 10rem;

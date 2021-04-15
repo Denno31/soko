@@ -61,16 +61,20 @@ function ProductDetails(props) {
         <>
           <div className="product-cat  m-1">
             <h2
-              className="product-container container"
+              className="container"
               style={{
-                display: 'flex',
                 alignItems: 'center',
-                marginBottom: '15px',
+                marginBottom: '10px',
               }}
             >
-              <Link to="/">
+              <Link
+                to="/"
+                style={{ display: 'flex', alignItems: 'flex-start' }}
+              >
                 <ArrowBackIosIcon />
-                <span style={{ marginLeft: '2rem' }}>{product.category}</span>
+                <div style={{ marginLeft: '.2rem', marginTop: '0px' }}>
+                  {product.category}
+                </div>
               </Link>
             </h2>
           </div>

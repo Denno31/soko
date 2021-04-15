@@ -9,12 +9,12 @@ function HomeScreen(props) {
   useEffect(() => {
     const searchDiv = document.querySelector('#search-div')
     if (searchDiv) {
-      searchDiv.style.display = 'block'
+      searchDiv.classList.remove('display-none')
     }
 
     return function () {
       console.log('unmounting')
-      if (searchDiv) searchDiv.style.display = 'none'
+      if (searchDiv) searchDiv.classList.add('display-none')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
